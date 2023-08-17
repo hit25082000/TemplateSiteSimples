@@ -6,6 +6,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script type="text/JavaScript">
+                                                                                                  (function (i, s, o, g, r, a, m) {
+                                                                                                    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                                                                                                      (i[r].q = i[r].q || []).push(arguments)
+                                                                                                    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                                                                                                      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+                                                                                                  })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+                                                                                              
+                                                                                                  ga('create', 'UA-XXXXX-Y', 'auto');
+                                                                                                  ga('send', 'pageview');
+                                                                                                </script>
+  <meta name="google-site-verification" content="X6xXlBom5xKV4-Vw4p8kRfnLX-F_SEBoEvM2lTafGPo" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
@@ -17,14 +29,16 @@
   <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-firestore-compat.js"></script>
-  <script src="./Js/app.js" defer crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.1.0/firebase-storage-compat.js"></script>
+  <script type="module" src="./Js/app.js" defer crossorigin="anonymous"></script>
   <script src="./Js/script.js" defer crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./Css/style.css">
   </head>
-  <body class="">
-    <header class="container d-flex flex-wrap  py-3 ">
-      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px"
+  <body>
+    <header class="container d-flex flex-wrap nav py-3 ">
+      <a href="/" class="d-flex align-items-center mb-3  mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <div id="empresaIcone">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px"
           viewBox="0 0 256 256" version="1.1" preserveAspectRatio="xMidYMid">
           <g>
             <path
@@ -37,13 +51,21 @@
             </path>
           </g>
         </svg>
+      </div>
         &nbsp;
-        <h1 class="fs-4 align-left">Pastelaria do DIA </h1>
+        <h1 class="fs-4 align-left" id="EmpresaNome">
+          <div class="lds-ellipsis">
+            <div class="loadChild"></div>
+            <div class="loadChild"></div>
+            <div class="loadChild"></div>
+            <div class="loadChild"></div>
+          </div>
+        </h1>
       </a>
-      <ul class="nav nav-tabs mb-3" id="pills-tab" role="tablist">
+      <ul class="nav nav-tabs mb-3" id="pills-tab" id="EmpresaLinks" role="tablist">
         <li class="nav-item" role="presentation">
           <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home"
-            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Home</button>
+            type="button" role="tab" aria-controls="pills-home" aria-selected="true">Inicio</button>
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
@@ -51,32 +73,74 @@
         </li>
         <li class="nav-item" role="presentation">
           <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
-            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Contato</button>
+            type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Nossa História</button>
         </li>
-        <button type="button" class="btn btn-secundary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="blue" class="bi bi-facebook"
-            viewBox="0 0 16 16">
+        <a type="button" id="EmpresaFacebook" href="https://www.facebook.com/" class="btn btn-secundary">
+          <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" viewBox="-204.79995 -341.33325 1774.9329 2047.9995">
             <path
-              d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
-          </svg>
-        </button>
-        <button type="button" class="btn btn-secundary">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="pink" class="bi bi-instagram"
-            viewBox="0 0 16 16">
+              d="M1365.333 682.667C1365.333 305.64 1059.693 0 682.667 0 305.64 0 0 305.64 0 682.667c0 340.738 249.641 623.16 576 674.373V880H402.667V682.667H576v-150.4c0-171.094 101.917-265.6 257.853-265.6 74.69 0 152.814 13.333 152.814 13.333v168h-86.083c-84.804 0-111.25 52.623-111.25 106.61v128.057h189.333L948.4 880H789.333v477.04c326.359-51.213 576-333.635 576-674.373"
+              fill="#1877f2" />
             <path
-              d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z" />
+              d="M948.4 880l30.267-197.333H789.333V554.609C789.333 500.623 815.78 448 900.584 448h86.083V280s-78.124-13.333-152.814-13.333c-155.936 0-257.853 94.506-257.853 265.6v150.4H402.667V880H576v477.04a687.805 687.805 0 00106.667 8.293c36.288 0 71.91-2.84 106.666-8.293V880H948.4"
+              fill="#fff" />
           </svg>
-        </button>
+        </a>
+        <a type="button" id="EmpresaInstagram" href="https://www.facebook.com/" class="btn btn-secundary">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="25" width="25"
+            viewBox="-19.5036 -32.49725 169.0312 194.9835">
+            <defs>
+              <radialGradient fy="578.088" fx="158.429" gradientTransform="matrix(0 -1.98198 1.8439 0 -1031.399 454.004)"
+                gradientUnits="userSpaceOnUse" xlink:href="#a" r="65" cy="578.088" cx="158.429" id="c" />
+              <radialGradient fy="473.455" fx="147.694"
+                gradientTransform="matrix(.17394 .86872 -3.5818 .71718 1648.351 -458.493)" gradientUnits="userSpaceOnUse"
+                xlink:href="#b" r="65" cy="473.455" cx="147.694" id="d" />
+              <linearGradient id="b">
+                <stop stop-color="#3771c8" offset="0" />
+                <stop offset=".128" stop-color="#3771c8" />
+                <stop stop-opacity="0" stop-color="#60f" offset="1" />
+              </linearGradient>
+              <linearGradient id="a">
+                <stop stop-color="#fd5" offset="0" />
+                <stop stop-color="#fd5" offset=".1" />
+                <stop stop-color="#ff543e" offset=".5" />
+                <stop stop-color="#c837ab" offset="1" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
+              fill="url(#c)" />
+            <path
+              d="M65.033 0C37.891 0 29.953.028 28.41.156c-5.57.463-9.036 1.34-12.812 3.22-2.91 1.445-5.205 3.12-7.47 5.468-4.125 4.282-6.625 9.55-7.53 15.812-.44 3.04-.568 3.66-.594 19.188-.01 5.176 0 11.988 0 21.125 0 27.12.03 35.05.16 36.59.45 5.42 1.3 8.83 3.1 12.56 3.44 7.14 10.01 12.5 17.75 14.5 2.68.69 5.64 1.07 9.44 1.25 1.61.07 18.02.12 34.44.12 16.42 0 32.84-.02 34.41-.1 4.4-.207 6.955-.55 9.78-1.28a27.22 27.22 0 0017.75-14.53c1.765-3.64 2.66-7.18 3.065-12.317.088-1.12.125-18.977.125-36.81 0-17.836-.04-35.66-.128-36.78-.41-5.22-1.305-8.73-3.127-12.44-1.495-3.037-3.155-5.305-5.565-7.624-4.3-4.108-9.56-6.608-15.829-7.512C102.338.157 101.733.027 86.193 0z"
+              fill="url(#d)" />
+            <path
+              d="M65.003 17c-13.036 0-14.672.057-19.792.29-5.11.234-8.598 1.043-11.65 2.23-3.157 1.226-5.835 2.866-8.503 5.535-2.67 2.668-4.31 5.346-5.54 8.502-1.19 3.053-2 6.542-2.23 11.65C17.06 50.327 17 51.964 17 65s.058 14.667.29 19.787c.235 5.11 1.044 8.598 2.23 11.65 1.227 3.157 2.867 5.835 5.536 8.503 2.667 2.67 5.345 4.314 8.5 5.54 3.054 1.187 6.543 1.996 11.652 2.23 5.12.233 6.755.29 19.79.29 13.037 0 14.668-.057 19.788-.29 5.11-.234 8.602-1.043 11.656-2.23 3.156-1.226 5.83-2.87 8.497-5.54 2.67-2.668 4.31-5.346 5.54-8.502 1.18-3.053 1.99-6.542 2.23-11.65.23-5.12.29-6.752.29-19.788 0-13.036-.06-14.672-.29-19.792-.24-5.11-1.05-8.598-2.23-11.65-1.23-3.157-2.87-5.835-5.54-8.503-2.67-2.67-5.34-4.31-8.5-5.535-3.06-1.187-6.55-1.996-11.66-2.23-5.12-.233-6.75-.29-19.79-.29zm-4.306 8.65c1.278-.002 2.704 0 4.306 0 12.816 0 14.335.046 19.396.276 4.68.214 7.22.996 8.912 1.653 2.24.87 3.837 1.91 5.516 3.59 1.68 1.68 2.72 3.28 3.592 5.52.657 1.69 1.44 4.23 1.653 8.91.23 5.06.28 6.58.28 19.39s-.05 14.33-.28 19.39c-.214 4.68-.996 7.22-1.653 8.91-.87 2.24-1.912 3.835-3.592 5.514-1.68 1.68-3.275 2.72-5.516 3.59-1.69.66-4.232 1.44-8.912 1.654-5.06.23-6.58.28-19.396.28-12.817 0-14.336-.05-19.396-.28-4.68-.216-7.22-.998-8.913-1.655-2.24-.87-3.84-1.91-5.52-3.59-1.68-1.68-2.72-3.276-3.592-5.517-.657-1.69-1.44-4.23-1.653-8.91-.23-5.06-.276-6.58-.276-19.398s.046-14.33.276-19.39c.214-4.68.996-7.22 1.653-8.912.87-2.24 1.912-3.84 3.592-5.52 1.68-1.68 3.28-2.72 5.52-3.592 1.692-.66 4.233-1.44 8.913-1.655 4.428-.2 6.144-.26 15.09-.27zm29.928 7.97a5.76 5.76 0 105.76 5.758c0-3.18-2.58-5.76-5.76-5.76zm-25.622 6.73c-13.613 0-24.65 11.037-24.65 24.65 0 13.613 11.037 24.645 24.65 24.645C78.616 89.645 89.65 78.613 89.65 65S78.615 40.35 65.002 40.35zm0 8.65c8.836 0 16 7.163 16 16 0 8.836-7.164 16-16 16-8.837 0-16-7.164-16-16 0-8.837 7.163-16 16-16z"
+              fill="#fff" />
+          </svg>
+        </a>
+        <a type="button" id="EmpresaWhatsApp" href="https://www.facebook.com/" class="btn btn-secundary">
+          <svg xmlns="http://www.w3.org/2000/svg" height="25" width="25" fill="green"
+            viewBox="-116.80905 -194.68125 1012.3451 1168.0875">
+            <path
+              d="M482.751 825.596c-13.025-.463-29.812-1.482-37.442-3.022-11.647-2.352-22.646-5.918-31.793-10.58-10.747-5.477-20.379-12.465-28.696-20.769-8.336-8.32-15.352-17.961-20.851-28.724-4.649-9.098-8.213-20.03-10.575-31.611-1.571-7.707-2.61-24.619-3.081-37.728a525.205 525.205 0 01-.289-15.49l-.046-287.576c0-3.185.097-10.121.287-15.485.463-13.024 1.482-29.811 3.023-37.441 2.351-11.646 5.918-22.646 10.579-31.793 5.478-10.748 12.465-20.378 20.769-28.696 8.32-8.335 17.962-15.351 28.724-20.851 9.099-4.648 20.031-8.213 31.611-10.575 7.707-1.571 24.62-2.61 37.729-3.08 5.356-.192 12.291-.29 15.489-.29l287.576-.046c3.186 0 10.122.096 15.484.287 13.025.464 29.813 1.482 37.442 3.023 11.647 2.352 22.647 5.919 31.793 10.579 10.747 5.478 20.379 12.466 28.696 20.769 8.335 8.321 15.351 17.961 20.851 28.724 4.648 9.099 8.214 20.03 10.575 31.611 1.572 7.707 2.61 24.621 3.081 37.729.192 5.357.289 12.291.289 15.489l.047 287.576c0 3.186-.097 10.122-.288 15.485-.464 13.024-1.482 29.811-3.023 37.441-2.351 11.647-5.918 22.646-10.579 31.793-5.477 10.748-12.466 20.379-20.768 28.697-8.321 8.334-17.963 15.351-28.725 20.85-9.099 4.649-20.03 8.214-31.611 10.575-7.707 1.571-24.62 2.61-37.728 3.08-5.358.193-12.292.29-15.49.29l-287.576.046a524.82 524.82 0 01-15.484-.287"
+              transform="matrix(1.33333 0 0 -1.33333 -466.637 1101.177)" />
+            <path
+              d="M524.354 440.616c-6.936-3.47-41.036-20.245-47.395-22.558-6.357-2.314-10.98-3.471-15.604 3.47-4.624 6.942-17.916 22.559-21.963 27.187-4.045 4.627-8.09 5.207-15.026 1.735-6.936-3.47-29.284-10.792-55.776-34.415-20.62-18.384-34.54-41.092-38.586-48.033-4.045-6.942-.43-10.694 3.043-14.151 3.119-3.105 6.935-8.097 10.403-12.147 3.468-4.05 4.624-6.941 6.936-11.568 2.312-4.628 1.156-8.677-.58-12.148-1.732-3.47-15.603-37.598-21.383-51.481-5.63-13.52-11.348-11.69-15.605-11.903-4.042-.201-8.67-.244-13.294-.244-4.624 0-12.137 1.736-18.496 8.676-6.357 6.942-24.274 23.718-24.274 57.844 0 34.128 24.853 67.099 28.32 71.727 3.469 4.628 48.909 74.663 118.485 104.696 16.548 7.144 29.468 11.41 39.54 14.607 16.616 5.276 31.736 4.532 43.687 2.746 13.325-1.99 41.036-16.774 46.816-32.97 5.778-16.196 5.778-30.08 4.045-32.971-1.733-2.892-6.357-4.628-13.293-8.099M397.8 613.355h-.093c-41.4-.016-82.005-11.133-117.428-32.148l-8.425-5-87.322 22.9 23.308-85.11-5.486-8.726c-23.095-36.723-35.292-79.167-35.275-122.747.05-127.168 103.55-230.628 230.813-230.628 61.624.024 119.552 24.047 163.112 67.642 43.56 43.596 67.536 101.545 67.512 163.173-.052 127.177-103.55 230.644-230.716 230.644M594.158 186.41c-52.408-52.452-122.104-81.352-196.36-81.381-153 0-277.524 124.476-277.586 277.477-.02 48.908 12.762 96.65 37.052 138.73l-39.38 143.797 147.152-38.587c40.544 22.107 86.192 33.756 132.65 33.776h.116c152.985 0 277.52-124.492 277.582-277.495.028-74.146-28.817-143.866-81.226-196.317"
+              fill="#fff" />
+          </svg>
+        </a>
       </ul>
-      <button type="button" id="btnMudarTema" onclick="MudarTema()" class="btn btn-secundary btnMudarTema">
+      <button type="button" id="btnMudarTema" onclick="Theme.SwitchTheme()" class="btn btn-secundary btnMudarTema">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="yellow" class="bi bi-brightness-high-fill"
           viewBox="0 0 16 16">
           <path
             d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
         </svg>
       </button>
+      <button type="button" class="btn btn-outline-secondary position-relative cartIconNotification"
+        data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Cart </button>
     </header>
     <main>
+      
       <div class="tab-content" id="pills-tabContent">
         <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
           tabindex="0">
@@ -93,7 +157,8 @@
             </div>
             <div class="overflow-hidden" style="max-height: 30vh;">
               <div class="container px-5">
-                <img src="./imagens/bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                <img src="https://source.unsplash.com/random/1000x1000" id="myimg" class="img-fluid border rounded-3 shadow-lg mb-4"
+                  alt="Example image"
                   width="700" height="500" loading="lazy">
               </div>
             </div>
@@ -102,7 +167,8 @@
         <div class="container col-xxl-8 px-4 py-5">
           <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
             <div class="col-10 col-sm-8 col-lg-6">
-              <img src="./imagens/bootstrap-themes.png" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700"
+              <img src="https://source.unsplash.com/random/3000x3000" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes"
+                width="700"
                 height="500" loading="lazy">
             </div>
             <div class="col-lg-6">
@@ -125,13 +191,12 @@
                 aria-label="Slide 1"></button>
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
               <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
             </div>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                  preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                </svg>
+                <img src="https://source.unsplash.com/random/2000x1080" width="100%" xmlns="https://source.unsplash.com/random"
+                  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="">
                 <div class="container">
                   <div class="carousel-caption text-start">
                     <h1>Example headline.</h1>
@@ -154,10 +219,19 @@
                 </div>
               </div>
               <div class="carousel-item">
-                <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-                  preserveAspectRatio="xMidYMid slice" focusable="false">
-                  <rect width="100%" height="100%" fill="var(--bs-secondary-color)" />
-                </svg>
+                <img src="https://source.unsplash.com/random/1920x1080" width="100%" xmlns="https://source.unsplash.com/random"
+                  aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="">
+                <div class="container">
+                  <div class="carousel-caption text-end">
+                    <h1>One more for good measure.</h1>
+                    <p>Some representative placeholder content for the third slide of this carousel.</p>
+                    <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+                  </div>
+                </div>
+                </div>
+                <div class="carousel-item">
+                  <img src="https://source.unsplash.com/random/1920x500" width="100%" xmlns="https://source.unsplash.com/random"
+                    aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false" alt="">
                 <div class="container">
                   <div class="carousel-caption text-end">
                     <h1>One more for good measure.</h1>
@@ -179,13 +253,53 @@
           <div class="album py-5 bg-body-tertiary">
             <div class="container">
               <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 produtos">
-                <div class="lds-ellipsis">
-                  <div class="loadChild"></div>
-                  <div class="loadChild"></div>
-                  <div class="loadChild"></div>
-                  <div class="loadChild"></div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+                      aria-label="Placeholder: Produto" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">...</text>
+                    </svg>
+                    <div class="card-body">
+                      <p class="card-text">...</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                          <div class="lds-ellipsis">
+                            <div class="loadChild"></div>
+                            <div class="loadChild"></div>
+                            <div class="loadChild"></div>
+                            <div class="loadChild"></div>
+                          </div>
+                        </div>
+                        <small class="text-body-secondary">...</small>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
+                <div class="col">
+                  <div class="card shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img"
+                      aria-label="Placeholder: Produto" preserveAspectRatio="xMidYMid slice" focusable="false">
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">...</text>
+                    </svg>
+                    <div class="card-body">
+                      <p class="card-text">...</p>
+                      <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                                  <div class="lds-ellipsis">
+                                    <div class="loadChild"></div>
+                                    <div class="loadChild"></div>
+                                    <div class="loadChild"></div>
+                                    <div class="loadChild"></div>
+                                  </div>
+                                  </div>
+                                <small class="text-body-secondary">...</small>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
+                                </div>
             </div>
           </div>
         </div>
@@ -199,6 +313,32 @@
             </div>
           </div>
         </div>
+        </div>
+        <div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="true" tabindex="-1" id="offcanvasScrolling"
+          aria-labelledby="offcanvasScrollingLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Carrinho</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="card mb-3" style="max-width: 540px;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img
+                    src="https://images.unsplash.com/photo-1493612276216-ee3925520721?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80"
+                    class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">nome</p>
+                    <button class="btn btn-primary"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn btn-primary m-2"> Comprar</button>
         </div>
         </main>
         <div class="b-example-divider"></div>
@@ -214,9 +354,8 @@
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Features</a></li>
             <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Pricing</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">FAQs</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
           </ul>
         </footer>
+      
   </body>
 </html>
